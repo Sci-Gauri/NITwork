@@ -180,7 +180,7 @@ df = pd.read_csv("data/nits.csv")
 # SEARCH BAR
 # ==================================================
 
-left, center, right = st.columns([1,5,1])
+left, center, right = st.columns([1,4,1])
 
 with center:
 
