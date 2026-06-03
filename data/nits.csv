@@ -1,6 +1,36 @@
-Rank,College,State,MedianPackage,HighestPackage,Website,Whatsapp
-1,NIT Trichy,Tamil Nadu,15.8,52,https://www.nitt.edu,https://chat.whatsapp.com/example1
-2,NIT Surathkal,Karnataka,14.5,54,https://www.nitk.ac.in,https://chat.whatsapp.com/example2
-3,NIT Warangal,Telangana,14.2,51,https://www.nitw.ac.in,https://chat.whatsapp.com/example3
-4,MNIT Jaipur,Rajasthan,12.3,64,https://www.mnit.ac.in,https://chat.whatsapp.com/example4
-5,MNNIT Allahabad,Uttar Pradesh,13.1,60,https://www.mnnit.ac.in,https://chat.whatsapp.com/example5
+DisplayRank,Tier,College,ShortName,State,City,Website,WhatsAppLink,Verified,MedianPackage,HighestPackage,NIRFRank
+
+1,Tier 1,National Institute of Technology Tiruchirappalli,NIT Trichy,Tamil Nadu,Tiruchirappalli,https://www.nitt.edu,https://chat.whatsapp.com/KsuQXzIb1Yb4zNYkTVJNTy,No,,,9
+2,Tier 1,National Institute of Technology Karnataka Surathkal,NIT Surathkal,Karnataka,Mangaluru,https://www.nitk.ac.in,,No,,,17
+3,Tier 1,National Institute of Technology Warangal,NIT Warangal,Telangana,Warangal,https://www.nitw.ac.in,https://chat.whatsapp.com/BH6uUNZGKnNA6Wy0gSKXVS,No,,,21
+4,Tier 1,National Institute of Technology Rourkela,NIT Rourkela,Odisha,Rourkela,https://www.nitrkl.ac.in,https://chat.whatsapp.com/EigKxGQFYfeAITmY4vD4QX?mode=gi_t,No,,,16
+5,Tier 1,National Institute of Technology Calicut,NIT Calicut,Kerala,Kozhikode,https://nitc.ac.in,PENDING,No,,,25
+
+6,Tier 2,Motilal Nehru National Institute of Technology Allahabad,MNNIT Allahabad,Uttar Pradesh,Prayagraj,https://www.mnnit.ac.in,https://chat.whatsapp.com/GSNaZnj3nbN9MhSilon2Nq?s=cl&p=a&mlu=2,No,,,
+7,Tier 2,Malaviya National Institute of Technology Jaipur,MNIT Jaipur,Rajasthan,Jaipur,https://www.mnit.ac.in,https://chat.whatsapp.com/BD5929TgKWV1RZBTevpC76?mode=gi_t,No,,,
+8,Tier 2,Visvesvaraya National Institute of Technology Nagpur,VNIT Nagpur,Maharashtra,Nagpur,https://vnit.ac.in,PENDING,No,,,
+9,Tier 2,National Institute of Technology Kurukshetra,NIT Kurukshetra,Haryana,Kurukshetra,https://nitkkr.ac.in,https://chat.whatsapp.com/JO4Bio4pCVHEV8rekJUtMA?s=cl&p=a&mlu=3&amv=0,No,,,
+10,Tier 2,Sardar Vallabhbhai National Institute of Technology Surat,SVNIT Surat,Gujarat,Surat,https://www.svnit.ac.in,PENDING,No,,,
+11,Tier 2,National Institute of Technology Delhi,NIT Delhi,Delhi,Delhi,https://nitdelhi.ac.in,https://chat.whatsapp.com/IBXI6OWsChJCrJxOZinw1D?s=cl&p=a&mlu=4,No,,,
+12,Tier 2,Dr B R Ambedkar National Institute of Technology Jalandhar,NIT Jalandhar,Punjab,Jalandhar,https://www.nitj.ac.in,https://chat.whatsapp.com/FzjRAm8GG4pBe9foRo7XAN,No,,,
+
+13,Tier 3,Maulana Azad National Institute of Technology Bhopal,MANIT Bhopal,Madhya Pradesh,Bhopal,https://www.manit.ac.in,PENDING,No,,,
+14,Tier 3,National Institute of Technology Durgapur,NIT Durgapur,West Bengal,Durgapur,https://nitdgp.ac.in,PENDING,No,,,
+15,Tier 3,National Institute of Technology Jamshedpur,NIT Jamshedpur,Jharkhand,Jamshedpur,https://www.nitjsr.ac.in,https://chat.whatsapp.com/CMsGX7O8uXMCoza1z29kMn,No,,,
+16,Tier 3,National Institute of Technology Silchar,NIT Silchar,Assam,Silchar,https://www.nits.ac.in,PENDING,No,,,
+17,Tier 3,National Institute of Technology Hamirpur,NIT Hamirpur,Himachal Pradesh,Hamirpur,https://nith.ac.in,PENDING,No,,,
+18,Tier 3,National Institute of Technology Patna,NIT Patna,Bihar,Patna,https://www.nitp.ac.in,PENDING,No,,,
+19,Tier 3,National Institute of Technology Raipur,NIT Raipur,Chhattisgarh,Raipur,https://nitrr.ac.in,PENDING,No,,,
+20,Tier 3,National Institute of Technology Goa,NIT Goa,Goa,Farmagudi,https://www.nitgoa.ac.in,PENDING,No,,,
+
+21,Tier 4,National Institute of Technology Agartala,NIT Agartala,Tripura,Agartala,https://www.nita.ac.in,PENDING,No,,,
+22,Tier 4,National Institute of Technology Andhra Pradesh,NIT Andhra Pradesh,Andhra Pradesh,Tadepalligudem,https://nitandhra.ac.in,PENDING,No,,,
+23,Tier 4,National Institute of Technology Meghalaya,NIT Meghalaya,Meghalaya,Shillong,https://nitm.ac.in,PENDING,No,,,
+24,Tier 4,National Institute of Technology Srinagar,NIT Srinagar,Jammu and Kashmir,Srinagar,https://nitsri.ac.in,PENDING,No,,,
+25,Tier 4,National Institute of Technology Puducherry,NIT Puducherry,Puducherry,Karaikal,https://www.nitpy.ac.in,PENDING,No,,,
+26,Tier 4,National Institute of Technology Uttarakhand,NIT Uttarakhand,Uttarakhand,Srinagar,https://nituk.ac.in,PENDING,No,,,
+27,Tier 4,National Institute of Technology Arunachal Pradesh,NIT Arunachal Pradesh,Arunachal Pradesh,Yupia,https://nitap.ac.in,PENDING,No,,,
+28,Tier 4,National Institute of Technology Manipur,NIT Manipur,Manipur,Imphal,https://www.nitmanipur.ac.in,PENDING,No,,,
+29,Tier 4,National Institute of Technology Nagaland,NIT Nagaland,Nagaland,Chumukedima,https://nitnagaland.ac.in,PENDING,No,,,
+30,Tier 4,National Institute of Technology Mizoram,NIT Mizoram,Mizoram,Aizawl,https://www.nitmz.ac.in,PENDING,No,,,
+31,Tier 4,National Institute of Technology Sikkim,NIT Sikkim,Sikkim,Ravangla,https://nitsikkim.ac.in,PENDING,No,,,
