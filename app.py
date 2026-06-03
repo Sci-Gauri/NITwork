@@ -93,22 +93,25 @@ h1,h2,h3,h4,h5,h6,p {
    SEARCH
 ========================= */
 
+/* SEARCH BOX */
+
 .stTextInput input {
+    background-color: #0F172A !important;
+    color: white !important;
+    border: 1px solid #334155 !important;
+    border-radius: 12px !important;
 
-    background-color:#0F172A !important;
+    font-size: 18px !important;
 
-    color:white !important;
+    height: 50px !important;
+    padding: 0px 16px !important;
+}
 
-    border:1px solid #334155 !important;
+/* Placeholder text */
 
-    border-radius:12px !important;
-
-    font-size:18px !important;
-
-    padding-top:14px !important;
-    padding-bottom:14px !important;
-
-    min-height:55px !important;
+.stTextInput input::placeholder {
+    color: #94A3B8 !important;
+    opacity: 1;
 }
 
 /* =========================
