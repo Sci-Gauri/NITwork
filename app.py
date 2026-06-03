@@ -103,9 +103,12 @@ h1,h2,h3,h4,h5,h6,p {
 
     border-radius:12px !important;
 
-    height:55px !important;
-
     font-size:18px !important;
+
+    padding-top:14px !important;
+    padding-bottom:14px !important;
+
+    min-height:55px !important;
 }
 
 /* =========================
@@ -164,18 +167,6 @@ Find your NIT. Join your community. Choose with confidence.
 st.markdown("""
 <div class='hero-small'>
 31 NITs • WhatsApp Communities • Student Built
-
-<br>
-
-Built by
-<a href='https://www.linkedin.com/in/gauri-92359a270/'
-target='_blank'
-style='color:#38BDF8;text-decoration:none;'>
-
-Gauri
-
-</a>
-
 </div>
 """, unsafe_allow_html=True)
 
