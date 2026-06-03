@@ -19,25 +19,15 @@ st.set_page_config(
 st.markdown("""
 <style>
 
-/* ===== APP ===== */
+/* =========================
+   GLOBAL
+========================= */
 
 .stApp {
     background-color: #020617;
 }
 
-/* ===== REMOVE TOP BAR ===== */
-
-header[data-testid="stHeader"] {
-    background: #020617;
-}
-
-/* ===== HIDE SIDEBAR ===== */
-
-section[data-testid="stSidebar"] {
-    display: none;
-}
-
-/* ===== HIDE MENU ===== */
+/* Hide Streamlit Menu */
 
 #MainMenu {
     visibility: hidden;
@@ -47,42 +37,61 @@ footer {
     visibility: hidden;
 }
 
-/* ===== PAGE WIDTH ===== */
+/* Header */
+
+header[data-testid="stHeader"] {
+    background: #020617;
+}
+
+/* Sidebar */
+
+section[data-testid="stSidebar"] {
+    display: none;
+}
+
+/* Container */
 
 .block-container {
-    max-width: 1400px;
+    max-width: 1350px;
     padding-top: 2rem;
 }
 
-/* ===== TEXT ===== */
+/* =========================
+   TEXT
+========================= */
 
 h1,h2,h3,h4,h5,h6,p {
     color: white !important;
 }
 
-/* ===== HERO ===== */
+/* =========================
+   HERO
+========================= */
 
-.hero-title{
+.hero-title {
     text-align:center;
     font-size:80px;
     font-weight:800;
     margin-bottom:0px;
 }
 
-.hero-subtitle{
+.hero-subtitle {
     text-align:center;
     color:#94A3B8;
     font-size:24px;
+    margin-top:0px;
 }
 
-.hero-small{
+.hero-small {
     text-align:center;
     color:#64748B;
     font-size:18px;
     margin-bottom:40px;
 }
 
-/* ===== SEARCH ===== */
+/* =========================
+   SEARCH
+========================= */
 
 .stTextInput input {
 
@@ -94,12 +103,14 @@ h1,h2,h3,h4,h5,h6,p {
 
     border-radius:12px !important;
 
-    height:60px !important;
+    height:55px !important;
 
     font-size:18px !important;
 }
 
-/* ===== BUTTONS ===== */
+/* =========================
+   BUTTONS
+========================= */
 
 .stLinkButton button,
 .stButton button {
@@ -112,30 +123,30 @@ h1,h2,h3,h4,h5,h6,p {
 
     border-radius:10px !important;
 
-    height:48px !important;
+    height:46px !important;
 
     font-weight:600 !important;
 }
 
-/* ===== DIVIDERS ===== */
+.stLinkButton button:hover,
+.stButton button:hover {
+
+    border:1px solid #38BDF8 !important;
+}
+
+/* =========================
+   DIVIDERS
+========================= */
 
 hr {
     border:1px solid #1E293B;
-}
-
-/* ===== FOOTER ===== */
-
-.footer{
-    text-align:center;
-    color:#94A3B8;
-    margin-top:40px;
 }
 
 </style>
 """, unsafe_allow_html=True)
 
 # ==================================================
-# HERO
+# HERO SECTION
 # ==================================================
 
 st.markdown("""
@@ -153,11 +164,23 @@ Find your NIT. Join your community. Choose with confidence.
 st.markdown("""
 <div class='hero-small'>
 31 NITs • WhatsApp Communities • Student Built
+
+<br>
+
+Built by
+<a href='https://www.linkedin.com/in/gauri-92359a270/'
+target='_blank'
+style='color:#38BDF8;text-decoration:none;'>
+
+Gauri
+
+</a>
+
 </div>
 """, unsafe_allow_html=True)
 
 # ==================================================
-# LOAD DATA
+# LOAD CSV
 # ==================================================
 
 df = pd.read_csv("data/nits.csv")
@@ -187,22 +210,18 @@ if search:
     ]
 
 # ==================================================
-# TITLE
+# NIT LIST
 # ==================================================
 
 st.markdown("## 🏛 Browse All NITs")
 
 st.write("")
 
-# ==================================================
-# NIT LIST
-# ==================================================
-
 for _, row in df.iterrows():
 
-    col1, col2, col3 = st.columns([8, 1.5, 2.5])
+    col1, col2, col3 = st.columns([7, 1.4, 2.2])
 
-    # College Info
+    # College
 
     with col1:
 
@@ -265,7 +284,6 @@ for _, row in df.iterrows():
 # ==================================================
 
 st.write("")
-st.write("")
 
 st.markdown("## About NITwork")
 
@@ -276,25 +294,3 @@ and make better counselling decisions.
 
 Built for students, by students.
 """)
-
-# ==================================================
-# FOOTER
-# ==================================================
-
-st.write("---")
-
-st.markdown("""
-<div class='footer'>
-
-<h4>Built by Gauri 🚀</h4>
-
-<a href='https://www.linkedin.com/in/gauri-92359a270/'
-target='_blank'
-style='color:#38BDF8;text-decoration:none;'>
-
-Connect on LinkedIn
-
-</a>
-
-</div>
-""", unsafe_allow_html=True)
