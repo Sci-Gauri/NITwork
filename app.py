@@ -165,26 +165,6 @@ if search:
         .str.contains(search, case=False, na=False)
     ]
 
-# =====================================================
-# TOP 5 NITS
-# =====================================================
-
-st.subheader("⭐ Top NITs")
-
-top5 = df.head(5)
-
-for _, row in top5.iterrows():
-
-    st.markdown(
-        f"""
-        <div class='nit-card'>
-            <h3>#{row['DisplayRank']} {row['ShortName']}</h3>
-            <p>{row['City']}, {row['State']}</p>
-            <p>{row['Tier']}</p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
 
 # =====================================================
 # ALL NITS
@@ -195,47 +175,54 @@ st.subheader("🏛 Browse All NITs")
 
 for _, row in df.iterrows():
 
-    st.markdown(
-        f"""
-        <div class='nit-card'>
-            <h3>#{row['DisplayRank']} {row['ShortName']}</h3>
-            <p>{row['City']}, {row['State']}</p>
-            <p>{row['Tier']}</p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns([5, 1.5, 1.5])
 
     with col1:
 
-        if str(row["WhatsAppLink"]).strip() != "PENDING":
+        st.markdown(
+            f"""
+            ### #{row['DisplayRank']} {row['ShortName']}
+            <span style='color:#94A3B8'>
+            {row['City']}, {row['State']}
+            </span>
+            """,
+            unsafe_allow_html=True
+        )
+
+    with col2:
+
+        st.link_button(
+            "🌐 Website",
+            row["Website"],
+            use_container_width=True
+        )
+
+    with col3:
+
+        wp_link = str(row["WhatsAppLink"]).strip()
+
+        if (
+            wp_link
+            and wp_link != "PENDING"
+            and wp_link != "nan"
+            and wp_link.startswith("http")
+        ):
 
             st.link_button(
-                "💬 Join WhatsApp Group",
-                row["WhatsAppLink"],
+                "💬 Join",
+                wp_link,
                 use_container_width=True
             )
 
         else:
 
             st.button(
-                "🚧 WhatsApp Group Coming Soon",
-                key=f"wp_{row['ShortName']}",
+                "🚧 Soon",
+                key=row["ShortName"],
                 use_container_width=True
             )
 
-    with col2:
-
-        st.link_button(
-            "🌐 Official Website",
-            row["Website"],
-            use_container_width=True
-        )
-
     st.divider()
-
 # =====================================================
 # ABOUT
 # =====================================================
