@@ -185,9 +185,9 @@ left, center, right = st.columns([1,4,1])
 with center:
 
     search = st.text_input(
-        "",
-        placeholder="🔍 Search your NIT..."
-    )
+    "",
+    placeholder="Search NIT Trichy, Surathkal, Warangal..."
+)
 
 if search:
 
