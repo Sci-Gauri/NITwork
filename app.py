@@ -1,159 +1,179 @@
 import streamlit as st
 import pandas as pd
 
-# =====================================
+# ==================================================
 # PAGE CONFIG
-# =====================================
+# ==================================================
 
 st.set_page_config(
     page_title="NITwork",
     page_icon="🎓",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="collapsed"
 )
 
-# =====================================
+# ==================================================
 # CUSTOM CSS
-# =====================================
+# ==================================================
 
 st.markdown("""
 <style>
 
-/* MAIN APP */
+/* ===== APP ===== */
 
 .stApp {
     background-color: #020617;
 }
 
-/* WIDER PAGE */
+/* ===== REMOVE TOP BAR ===== */
+
+header[data-testid="stHeader"] {
+    background: #020617;
+}
+
+/* ===== HIDE SIDEBAR ===== */
+
+section[data-testid="stSidebar"] {
+    display: none;
+}
+
+/* ===== HIDE MENU ===== */
+
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+/* ===== PAGE WIDTH ===== */
 
 .block-container {
-    max-width: 1500px;
+    max-width: 1400px;
     padding-top: 2rem;
 }
 
-/* SIDEBAR */
-
-section[data-testid="stSidebar"] {
-    background-color: #071226 !important;
-}
-
-section[data-testid="stSidebar"] * {
-    color: white !important;
-}
-
-[data-testid="stSidebarNav"] {
-    background-color: #071226 !important;
-}
-
-/* TEXT */
+/* ===== TEXT ===== */
 
 h1,h2,h3,h4,h5,h6,p {
     color: white !important;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 
-.hero-title {
+.hero-title{
     text-align:center;
-    font-size:72px;
+    font-size:80px;
     font-weight:800;
-    color:white;
     margin-bottom:0px;
 }
 
-.hero-subtitle {
+.hero-subtitle{
     text-align:center;
     color:#94A3B8;
     font-size:24px;
-    margin-bottom:20px;
 }
 
-.hero-small {
+.hero-small{
     text-align:center;
     color:#64748B;
     font-size:18px;
-    margin-bottom:50px;
+    margin-bottom:40px;
 }
 
-/* SEARCH */
+/* ===== SEARCH ===== */
 
 .stTextInput input {
+
     background-color:#0F172A !important;
+
     color:white !important;
+
     border:1px solid #334155 !important;
+
     border-radius:12px !important;
+
     height:60px !important;
+
     font-size:18px !important;
 }
 
-/* LINKS */
+/* ===== BUTTONS ===== */
 
-a {
-    color:#38BDF8 !important;
+.stLinkButton button,
+.stButton button {
+
+    background-color:#0F172A !important;
+
+    color:white !important;
+
+    border:1px solid #334155 !important;
+
+    border-radius:10px !important;
+
+    height:48px !important;
+
+    font-weight:600 !important;
 }
 
-/* FOOTER */
-
-.footer {
-    text-align:center;
-    color:#94A3B8;
-    margin-top:50px;
-}
-
-/* DIVIDER */
+/* ===== DIVIDERS ===== */
 
 hr {
-    border: 1px solid #1E293B;
+    border:1px solid #1E293B;
+}
+
+/* ===== FOOTER ===== */
+
+.footer{
+    text-align:center;
+    color:#94A3B8;
+    margin-top:40px;
 }
 
 </style>
 """, unsafe_allow_html=True)
 
-# =====================================
+# ==================================================
 # HERO
-# =====================================
+# ==================================================
 
-st.markdown(
-"""
-<div class='hero-title'>
-🎓 NITwork
-</div>
-""",
-unsafe_allow_html=True
-)
+st.markdown("""
+<h1 class='hero-title'>
+<span style='color:#38BDF8;'>NIT</span>work
+</h1>
+""", unsafe_allow_html=True)
 
-st.markdown(
-"""
+st.markdown("""
 <div class='hero-subtitle'>
 Find your NIT. Join your community. Choose with confidence.
 </div>
-""",
-unsafe_allow_html=True
-)
+""", unsafe_allow_html=True)
 
-st.markdown(
-"""
+st.markdown("""
 <div class='hero-small'>
 31 NITs • WhatsApp Communities • Student Built
 </div>
-""",
-unsafe_allow_html=True
-)
+""", unsafe_allow_html=True)
 
-# =====================================
-# LOAD CSV
-# =====================================
+# ==================================================
+# LOAD DATA
+# ==================================================
 
 df = pd.read_csv("data/nits.csv")
 
-# =====================================
-# SEARCH
-# =====================================
+# ==================================================
+# SEARCH BAR
+# ==================================================
 
-search = st.text_input(
-    "",
-    placeholder="🔍 Search your NIT..."
-)
+left, center, right = st.columns([1,5,1])
+
+with center:
+
+    search = st.text_input(
+        "",
+        placeholder="🔍 Search your NIT..."
+    )
 
 if search:
 
@@ -166,17 +186,23 @@ if search:
         )
     ]
 
-# =====================================
-# NIT LIST
-# =====================================
+# ==================================================
+# TITLE
+# ==================================================
 
-st.subheader("🏛 Browse All NITs")
+st.markdown("## 🏛 Browse All NITs")
+
+st.write("")
+
+# ==================================================
+# NIT LIST
+# ==================================================
 
 for _, row in df.iterrows():
 
-    col1, col2, col3 = st.columns([6, 1.3, 2])
+    col1, col2, col3 = st.columns([8, 1.5, 2.5])
 
-    # College Name
+    # College Info
 
     with col1:
 
@@ -191,7 +217,7 @@ for _, row in df.iterrows():
             unsafe_allow_html=True
         )
 
-    # Website Button
+    # Website
 
     with col2:
 
@@ -200,12 +226,12 @@ for _, row in df.iterrows():
         if website.startswith("http"):
 
             st.link_button(
-                "🌐 Website",
+                "Website",
                 website,
                 use_container_width=True
             )
 
-    # WhatsApp Button
+    # WhatsApp
 
     with col3:
 
@@ -213,13 +239,13 @@ for _, row in df.iterrows():
 
         if (
             wp
-            and wp != "PENDING"
             and wp != "nan"
+            and wp != "PENDING"
             and wp.startswith("http")
         ):
 
             st.link_button(
-                "🟢 Join WhatsApp Group",
+                "Join WhatsApp Group",
                 wp,
                 use_container_width=True
             )
@@ -227,21 +253,21 @@ for _, row in df.iterrows():
         else:
 
             st.button(
-                "🚧 Coming Soon",
+                "Coming Soon",
                 key=f"wp_{row['ShortName']}",
                 use_container_width=True
             )
 
     st.divider()
 
-# =====================================
+# ==================================================
 # ABOUT
-# =====================================
+# ==================================================
 
 st.write("")
 st.write("")
 
-st.subheader("About NITwork")
+st.markdown("## About NITwork")
 
 st.write("""
 NITwork helps students discover NIT communities,
@@ -251,9 +277,9 @@ and make better counselling decisions.
 Built for students, by students.
 """)
 
-# =====================================
+# ==================================================
 # FOOTER
-# =====================================
+# ==================================================
 
 st.write("---")
 
@@ -262,10 +288,13 @@ st.markdown("""
 
 <h4>Built by Gauri 🚀</h4>
 
-<a href="https://www.linkedin.com/in/gauri-92359a270/" target="_blank">
+<a href='https://www.linkedin.com/in/gauri-92359a270/'
+target='_blank'
+style='color:#38BDF8;text-decoration:none;'>
+
 Connect on LinkedIn
+
 </a>
 
 </div>
-""",
-unsafe_allow_html=True)
+""", unsafe_allow_html=True)
